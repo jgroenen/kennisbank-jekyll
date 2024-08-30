@@ -1,0 +1,22 @@
+<header class="header color-bg-brand-1 p-y4 m-b5">
+    <div class="lyt m-y3">
+        <div class="lyt-1">
+            <div class="u-flex u-space-between">
+                <div>
+                    <h2 class="text-h2 color-neutral-1"><a href="/"><img src="{{ "/assets/img/logo-kbgb.svg" | relative_url }}"
+                                class="size-kbgb-logo" alt="{{ site.title }}"></a></h2>
+                </div>
+                <div>
+                    <a href="#" class="burger" data-js-click="mobileMenu">
+                        <div class="burger-line burger-line-1"></div>
+                        <div class="burger-line burger-line-2"></div>
+                        <div class="burger-line burger-line-3"></div>
+                        <img src="{{ "/assets/icon/close-w.svg" | relative_url }}" class="burger-close">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include menu.html %}
+    {% include search-bar.html %}
+</header>

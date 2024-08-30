@@ -1,0 +1,3 @@
+[submodule "kennisbank"]
+	path = kennisbank
+	url = https://github.com/cdojenv/kennisbank.git

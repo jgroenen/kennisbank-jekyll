@@ -1,0 +1,64 @@
+---
+layout: default
+---
+{% comment %}replace [[ ]] with links{% endcomment %}
+{% assign copyContent = content %}
+{% for kaart in site.kaarten %}
+{% assign title = kaart.title | replace: "/", "" %}
+{% assign placeholder = "[[" | append: title | append: "]]" %}
+{% if copyContent contains placeholder %}
+{% assign link = "<a href='" | append: kaart.url | append: "'>" | append: kaart.title | append:
+    "</a>" %}
+{% assign copyContent = copyContent | replace: placeholder, link %}
+{% endif %}
+{% endfor %}
+<div class="card-block">
+    <div class="lyt">
+        <div class="lyt-1">
+            <div class="crumble">
+                <div class="u-flex u-align-center m-b3">
+                    <a href="/" class="text-body color-ui-1">Home</a>
+                    <span class="p-x2">&gt;</span>
+                    <a href="/?q=team:Algemeen" class="text-body color-ui-1">Algemeen</a>
+                </div>
+            </div>
+            <div class="card m-b4">
+                <h2 class="text-h1 m-b3">{{ page.title }}</h2>
+                <div class="markup-zone m-b2">{{ copyContent }}</div>
+                <div class="m-b5">
+                    <h4 class="text-h3 color-brand-1 m-b1">Tags</h4>
+                    {% for tag in page.tags %}
+                    <div class="u-display-inline-block m-t2 m-r2">
+                        <a href="/?q=%23{{ tag }}" class="tag text-body u-display-inline-block color-bg-brand-2 color-neutral-0 p-x4">#{{ tag }}</a>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="m-b5">
+                <h4 class="text-h3 color-brand-1 m-b1">Gerelateerd</h4>
+                <ul class="card-ul">
+                    {% assign placeholder = "[[" | append: page.title | append: "]]" %}
+                    {% for kaart in site.kaarten %}
+                    {% if kaart.tags contains page.title or kaart.content contains placeholder %}
+                    <li class="card-li m-b1">
+                        <a href="{{ kaart.url }}" class="card-li-a text-body color-ui-1">{{ kaart.title }}</a>
+                    </li>
+                    {% endif %}
+                    {% endfor %}
+                </ul>
+            </div>
+            {% if page.links %}
+            <div class="m-b5">
+                <h4 class="text-h3 color-brand-1 m-b1">Externe bronnen</h4>
+                <ul class="card-ul card-ul-external">
+                    {% for link in page.links %}
+                    <li class="card-li">
+                        <a href="{{ link }}" target="_blank" class="text-body u-underline color-ui-1">{{ link }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>

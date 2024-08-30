@@ -1,0 +1,22 @@
+title: Kennisbank Gegevensboekhouding
+
+collections:
+  kaarten:
+    output: true
+    permalink: /:collection/:path/
+    source: kennisbank/kaarten
+  besluiten:
+    output: true
+    permalink: /:collection/:path/
+    source: kennisbank/besluiten
+defaults:
+  - scope:
+      type: kaarten
+    values:
+      layout: card
+      collection: kaarten
+  - scope:
+      type: besluiten
+    values:
+      layout: card
+      collection: besluiten

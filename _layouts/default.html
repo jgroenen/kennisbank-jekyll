@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+{% include head.html %}
+
+<body>
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+
+    <script src="{{ "/assets/js/search.js" | relative_url }}" type="module"></script>
+    <script src="{{ "/assets/js/loader.js" | relative_url }}" type="module"></script>
+
+    <script>
+        // replace placeholders with images
+        //document.body.innerHTML.match(/\!\[\[(.*?)\]\]/g).forEach(match => {
+        //    var image = match.replace("![[", "").replace("]]", "");
+        //    document.body.innerHTML = document.body.innerHTML.replace(match, `<img src="${image}">`);
+        //});
+    </script>
+</body>
+
+</html>

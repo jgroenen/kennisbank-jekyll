@@ -1,0 +1,8 @@
+{% assign count = 0 %}
+{% for kaart in site.kaarten %}
+    {% assign urlSections = kaart.url | split: "/" %}
+    {% if urlSections[2] == include.team %}
+        {% assign count = count | plus: 1 %}
+    {% endif %}
+{% endfor %}
+{{ count }}
