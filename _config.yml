@@ -4,11 +4,9 @@ collections:
   kaarten:
     output: true
     permalink: /:collection/:path/
-    source: kennisbank/kaarten
   besluiten:
     output: true
     permalink: /:collection/:path/
-    source: kennisbank/besluiten
 defaults:
   - scope:
       type: kaarten
