@@ -1,0 +1,36 @@
+---
+layout: default
+---
+{% comment %}replace [[ ]] with links{% endcomment %}
+{% assign copyContent = content %}
+{% for kaart in site.kaarten %}
+{% assign title = kaart.title | replace: "/", "" %}
+{% assign placeholder = "[[" | append: title | append: "]]" %}
+{% if copyContent contains placeholder %}
+{% assign link = "<a href='" | append: kaart.url | append: "'>" | append: kaart.title | append:
+    "</a>" %}
+{% assign copyContent = copyContent | replace: placeholder, link %}
+{% endif %}
+{% endfor %}
+{% assign urlSections = page.url | split: "/" %}
+{% assign team = urlSections[2] %}
+<div class="besluit-block">
+    <div class="lyt">
+        <div class="lyt-1">
+            <div class="crumble">
+                <div class="u-flex u-align-center m-b3">
+                    <a href="/" class="text-body color-ui-1">Home</a>
+                    <span class="p-x2">&gt;</span>
+                    <a href="/besluiten" class="text-body color-ui-1">Besluiten</a>
+                </div>
+            </div>
+            <div class="card m-b4">
+                <div class="m-b4">
+                    <h1 class="text-h1 m-b3">{{ page.title }}</h1>
+                    <p class="text-body color-brand-1 m-b4">{{ page.date | date: "%Y-%m-%d" }} | {{ team }}</p>
+                    <div class="markup-zone m-b2">{{ copyContent }}</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

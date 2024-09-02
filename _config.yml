@@ -16,5 +16,5 @@ defaults:
   - scope:
       type: besluiten
     values:
-      layout: card
+      layout: decision
       collection: besluiten

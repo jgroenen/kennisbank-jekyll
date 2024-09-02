@@ -55,6 +55,12 @@ input[type=text] {
   appearance: none;
 }
 
+.besluiten-teaser {
+  background-image: url(/assets/icon/chevron-right-50.svg);
+  background-position: calc(100% - 16px) center;
+  background-repeat: no-repeat;
+}
+
 .btn {
   font-family: "Noto Sans", "sans-serif";
   font-weight: 600;
@@ -858,35 +864,40 @@ input[type=text] {
 
 /*
 .m-md-l4 {
-@include md {
-  margin-left: $spacing-4
+	@include md {
+		margin-left: $spacing-4
+	}
 }
-}
+
 .m-md-b4 {
-@include md {
-  margin-bottom: $spacing-4
+	@include md {
+		margin-bottom: $spacing-4
+	}
 }
-}
+
 .m-md-b2 {
-@include md {
-  margin-bottom: $spacing-2
+	@include md {
+		margin-bottom: $spacing-2
+	}
 }
-}
+
 .m-md-b5 {
-@include md {
-  margin-bottom: $spacing-5
+	@include md {
+		margin-bottom: $spacing-5
+	}
 }
-}
+
 .m-md-t5 {
-@include md {
-  margin-top: $spacing-5
+	@include md {
+		margin-top: $spacing-5
+	}
 }
-}
+
 .m-md-y4 {
-@include md {
-  margin-top: $spacing-4;
-  margin-bottom: $spacing-4;
-}
+	@include md {
+		margin-top: $spacing-4;
+		margin-bottom: $spacing-4;
+	}
 }*/
 .markup-zone {
   /* Body */
@@ -925,6 +936,7 @@ input[type=text] {
   font-weight: var(--text-h2-font-weight);
   font-size: var(--text-h2-sm-font-size);
   line-height: var(--text-h2-sm-line-height);
+  color: var(--color-brand-1);
 }
 
 @media screen and (min-width: 992px) {
@@ -939,6 +951,7 @@ input[type=text] {
   font-weight: var(--text-h3-font-weight);
   font-size: var(--text-h3-sm-font-size);
   line-height: var(--text-h3-sm-line-height);
+  color: var(--color-brand-1);
 }
 
 @media screen and (min-width: 992px) {
@@ -1270,9 +1283,9 @@ input[type=text] {
 
 /*
 .p-md-y6 {
-@include md {
-  padding-top: var(--spacing-6); padding-bottom: var(--spacing-6);
-}
+	@include md {
+		padding-top: var(--spacing-6); padding-bottom: var(--spacing-6);
+	}
 }
 }*/
 .placeholder {
@@ -1290,7 +1303,7 @@ input[type=text] {
 .search-bar-input {
   border: 0;
   border-radius: var(--border-radius);
-  background-image: url(/icon/search.svg);
+  background-image: url(/assets/icon/search.svg);
   width: 100%;
   background-repeat: no-repeat;
   background-position: 98% center;
@@ -1613,41 +1626,41 @@ input[type=text] {
   /* Brand Colors */
   --color-brand-1: #a90060;
   --color-brand-2: #F2D9E7;
-  /*    Neutral Colors */
+  /*  Neutral Colors */
   --color-neutral-0: #141414;
   --color-neutral-1: #ffffff;
   --color-neutral-2: #f5f5f5;
   --color-neutral-3: #dedede;
   --color-neutral-4: #bbbbbb;
-  /*    UI Colors */
+  /*  UI Colors */
   --color-ui-1: #01689b;
   --color-ui-2: #fff3d4;
-  /*    Font stacks */
+  /*  Font stacks */
   --stack-1: "Noto Sans", "sans-serif";
   --stack-1-font-weight-normal: 400;
   --stack-1-font-weight-bold: 600;
-  /*    Text Heading 1 */
+  /*  Text Heading 1 */
   --text-h1-font-family: var(--stack-1);
   --text-h1-font-weight: var(--stack-1-font-weight-bold);
   --text-h1-sm-font-size: 2.4rem;
   --text-h1-sm-line-height: 3.2rem;
   --text-h1-md-font-size: 3.0rem;
   --text-h1-md-line-height: 4.0rem;
-  /*    Text Heading 2 */
+  /*  Text Heading 2 */
   --text-h2-font-family: var(--stack-1);
   --text-h2-font-weight: var(--stack-1-font-weight-bold);
   --text-h2-sm-font-size: 1.9rem;
   --text-h2-sm-line-height: 2.4rem;
   --text-h2-md-font-size: 2.1rem;
   --text-h2-md-line-height: 2.8rem;
-  /*    Text Heading 3 */
+  /*  Text Heading 3 */
   --text-h3-font-family: var(--stack-1);
   --text-h3-font-weight: var(--stack-1-font-weight-bold);
   --text-h3-sm-font-size: 1.7rem;
   --text-h3-sm-line-height: 2.4rem;
   --text-h3-md-font-size: 1.8rem;
   --text-h3-md-line-height: 2.4rem;
-  /*    Text Heading 4 */
+  /*  Text Heading 4 */
   --text-h4-font-family: var(--stack-1);
   --text-h4-font-weight: var(--stack-1-font-weight-bold);
   --text-h4-sm-font-size: 1.5rem;

@@ -12,6 +12,8 @@ layout: default
 {% assign copyContent = copyContent | replace: placeholder, link %}
 {% endif %}
 {% endfor %}
+{% assign urlSections = page.url | split: "/" %}
+{% assign team = urlSections[2] %}
 <div class="card-block">
     <div class="lyt">
         <div class="lyt-1">
@@ -19,7 +21,7 @@ layout: default
                 <div class="u-flex u-align-center m-b3">
                     <a href="/" class="text-body color-ui-1">Home</a>
                     <span class="p-x2">&gt;</span>
-                    <a href="/?q=team:Algemeen" class="text-body color-ui-1">Algemeen</a>
+                    <a href="/?q=team:{{ team }}" class="text-body color-ui-1">{{ team }}</a>
                 </div>
             </div>
             <div class="card m-b4">
