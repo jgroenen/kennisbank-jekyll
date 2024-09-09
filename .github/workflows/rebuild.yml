@@ -1,0 +1,18 @@
+name: Rebuild GitHub Pages
+
+on:
+  schedule:
+    - cron: '9 45 * * *'  # Dit zorgt ervoor dat de actie elke dag om middernacht wordt uitgevoerd (UTC)
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Trigger GitHub Pages build
+        run: |
+          git commit --allow-empty -m "Trigger rebuild"
+          git push
