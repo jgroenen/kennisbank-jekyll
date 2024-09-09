@@ -2,7 +2,7 @@ name: Rebuild GitHub Pages
 
 on:
   schedule:
-    - cron: '9 45 * * *'  # Dit zorgt ervoor dat de actie elke dag om middernacht wordt uitgevoerd (UTC)
+    - cron: '50 9 * * *'  # Dit zorgt ervoor dat de actie elke dag om middernacht wordt uitgevoerd (UTC)
 
 jobs:
   build:
