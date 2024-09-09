@@ -1,8 +1,10 @@
-name: Rebuild GitHub Pages
+name: pages-rebuild
 
 on:
   schedule:
-    - cron: '50 9 * * *'  # Dit zorgt ervoor dat de actie elke dag om middernacht wordt uitgevoerd (UTC)
+    - cron: '00 6 * * *' # Automatically rebuild every day at 6:00 UTC
+
+  workflow_dispatch: # Manually rebuild
 
 jobs:
   build:
