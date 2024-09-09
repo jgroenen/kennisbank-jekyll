@@ -16,10 +16,15 @@ jobs:
 
       - name: Set Git Config
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
 
-      - name: Trigger GitHub Pages build
+      - name: Create empty commit to trigger rebuild
         run: |
           git commit --allow-empty -m "Trigger rebuild"
-          git push
+
+      - name: Push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Gebruik het ingebouwde GitHub-token
+        run: |
+          git push origin HEAD
