@@ -2,8 +2,8 @@
 layout: null
 permalink: /kaarten.csv
 ---
-{% capture csv_output %}"folder","title","url","tags","links","content"
-{% for kaart in site.kaarten %}{% assign id = kaart.id | replace: "/", "" %}{% assign urlSections = kaart.url | split: "/" %}{% assign folder = urlSections[2] %}{% assign title = kaart.title %}{% assign url = kaart.url | absolute_url %}{% assign content = kaart.content %}{% assign tags = kaart.tags | join: "; " %}{% assign links = kaart.links | join: "; " %}"{{ folder }}","{{ title }}","{{ url }}","{{ tags }}","{{ links }}","{{ content }}"
+{% capture csv_output %}folder;title;url;tags;links
+{% for kaart in site.kaarten %}{% assign id = kaart.id | replace: "/", "" %}{% assign urlSections = kaart.url | split: "/" %}{% assign folder = urlSections[2] %}{% assign title = kaart.title %}{% assign url = kaart.url | absolute_url %}{% assign tags = kaart.tags | join: "," %}{% assign links = kaart.links | join: "," %}{{ folder }};{{ title }};{{ url }};{{ tags }};{{ links }}
 {% endfor %}
 {% endcapture %}
 {{ csv_output }}
